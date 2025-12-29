@@ -66,11 +66,11 @@ It supports **users**, **technicians**, and **admins**, with real-time chat, ord
 
 ## 🧪 Demo Accounts
 
-| Role        | Email                    | Password |
-|------------|--------------------------|----------|
-| Admin      | admin@serviceconnect.com | admin123 |
-| User       | user@example.com         | user     |
-| Technician | tech@example.com         | tech     |
+| Role        | Email                    | hashed password                                                 |
+|------------|--------------------------|------------------------------------------------------------------|
+| Admin      | admin@serviceconnect.com | 240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9 |
+| User       | user@example.com         | 04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb |
+| Technician | tech@example.com         | fe9bbd400bb6cb314531e3462507661401959afc69aae96bc6aec2c213b83bc1 |
 
 ---
 
