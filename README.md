@@ -147,8 +147,8 @@ This project is licensed under the MIT License.
 ## 📬 Contact
 
 For support or inquiries:  
-📧 **support@serviceconnect.com**  
-📞 **+1-234-567-8900**
+📧 **zeyadalawady@gmail.com** 
+📞 **+201129519510**
 
 ---
 
