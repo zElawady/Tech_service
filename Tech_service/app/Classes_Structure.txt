@@ -1,0 +1,144 @@
+app/
+├── main.py
+│
+│── Chatbot  ------------------------> (Yassen - Rowda)
+│   ├── __init__(services)
+│   │   └── stores services & context
+│   ├── update_context(user_role, current_page)
+│   │   └── tracks user role & page
+│   └── get_response(user_input)
+│       ├── greetings handling
+│       ├── services & pricing queries
+│       ├── booking instructions
+│       ├── technician order guidance
+│       ├── chat instructions
+│       ├── account help
+│       ├── about & contact info
+│       └── fallback responses
+│
+│── DatabaseManager  -----------------> (Zeyad - Mahmoud)
+│   ├── __init__(db_path)
+│   │   ├── connect to SQLite
+│   │   ├── create tables
+│   │   └── seed initial data
+│   │
+│   ├── _connect()
+│   ├── _create_tables()
+│   │   ├── users
+│   │   ├── services
+│   │   ├── orders
+│   │   ├── contact_messages
+│   │   ├── chat_messages
+│   │   └── order_technicians
+│   │
+│   ├── _seed_initial_data()
+│   │   ├── admin account
+│   │   ├── demo users
+│   │   ├── technicians
+│   │   └── services list
+│   │
+│   ├── _hash_password(password)
+│   ├── authenticate_user(email, password)
+│   ├── register_user(email, password, name, role, phone, bio)
+│   │
+│   ├── get_services(category)
+│   ├── create_order(user_id, service_id, booking_date, payment, notes, price)
+│   ├── get_user_orders(user_id)
+│   ├── get_pending_orders(user_id)
+│   ├── update_order_status(order_id, status)
+│   │
+│   ├── get_dashboard_stats()
+│   ├── get_all_orders()
+│   │
+│   ├── get_user_profile(user_id)
+│   ├── update_user_profile(user_id, name, phone, bio)
+│   │
+│   ├── save_contact_message(name, email, subject, message)
+│   │
+│   ├── save_chat_message(order_id, sender_id, message)
+│   ├── get_chat_messages(order_id)
+│   ├── mark_messages_as_read(order_id, user_id)
+│   ├── get_unread_message_count(user_id, role)
+│   ├── get_user_chats(user_id, role)
+│   ├── get_order_details(order_id)
+│   ├── assign_technician_to_order(order_id, technician_id)
+│   ├── get_available_technicians()
+│   └── close()
+│
+│── UIManager
+│   ├── md(html)
+│   │   └── render HTML safely
+│   ├── show_notification(message, type)
+│   │   ├── success
+│   │   ├── error
+│   │   ├── warning
+│   │   └── info
+│   ├── format_datetime(datetime_string)
+│   ├── validate_email(email)
+│   ├── validate_phone(phone)
+│   └── inject_css()
+│       └── injects full UI styling
+│
+│── AuthManager
+│   └── logout()
+│       ├── clear session
+│       ├── reset navigation
+│       └── rerun app
+│
+│── NavigationManager
+│   ├── show_navigation(db)
+│   │   ├── role-based menus
+│   │   ├── unread chat badge
+│   │   └── page routing
+│   └── show_guest_navigation()
+│
+│── HomePage  ------------------------> (Admin / User / Tech Routing)
+│   └── show(db)
+│       ├── hero section
+│       ├── features
+│       ├── stats
+│       └── login / register actions
+│
+│── LoginPage
+│   └── show(db)
+│       ├── authentication
+│       ├── role redirect
+│       └── error handling
+│
+│── RegisterPage
+│   └── show(db)
+│       ├── role selection
+│       ├── validation
+│       └── account creation
+│
+│── ServicesPage  --------------------> (User)
+│   ├── show(db)
+│   │   ├── list services
+│   │   ├── filter & search
+│   │   └── select service
+│   └── show_service_details(db)
+│       ├── service info
+│       └── booking form
+│
+│── MyOrdersPage  --------------------> (User)
+│   └── show(db)
+│       ├── order list
+│       ├── status display
+│       └── chat access
+│
+│── PendingOrdersPage  ---------------> (Technician)
+│   └── show(db)
+│       ├── assigned orders
+│       ├── unread chat badge
+│       ├── status update
+│       └── contact customer
+│
+│── (Additional Pages inferred)
+│   ├── ChatsPage
+│   ├── DashboardPage (Admin)
+│   ├── ProfilePage
+│   ├── AboutPage
+│   └── ContactPage
+│
+README.md
+requirements.txt
